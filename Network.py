@@ -3,7 +3,7 @@ exec(str(FileN.read()))
 FileR = open("Random.py")
 exec(str(FileR.read()))
 inputamount = 4
-Layers = 4 #recommended to be over 3 for best results, will auto-increase when needed
+Layers = 4 #recommended to be over 3 for best results
 Networkingstr = []
 ANetworkingstring = []
 BNetworkingstring = []
@@ -51,7 +51,7 @@ def CopyArray(inp):
     for val in inp:
         out.append(val)
     return out
-def UseNode(NodeType,Inpa,Inpb):#if one inp use Inpa,Inpb is not referenced.
+def UseNode(NodeType,Inpa,Inpb):
     if NodeType == 1:
         out = IONode(Inpa)
         return(out)
@@ -114,7 +114,6 @@ def score(inp,inpa,inpb,inpc,inpd,inpe,ans):
     scorelist = scorelist + list(str(scoree))
     scorelist.sort()
     TopScore = int(scorelist[len(scorelist)-1])
-    print(scorelist)
     if score == TopScore:
         return("LAST")
     if scorea == TopScore:
@@ -152,7 +151,7 @@ while(Fin == 0):
         Inp = Inp + str(input("Question: Input a bit:"))
         roundsc = roundsc + 1
     while(roundsd <= inputamount-1):
-        Answer = Answer + list(str(input("Answer: Input a bit:")))  #do rember to clear var(Inp,Answer,roundsd,roundsc)
+        Answer = Answer + list(str(input("Answer: Input a bit:")))
         roundsd = roundsd + 1
     Output = runarry(Networkingstr,Inp,inputamount,Layers)
     AOutput = runarry(ANetworkingstr,Inp,inputamount,Layers)
@@ -165,24 +164,24 @@ while(Fin == 0):
         print("The AI thought the answer was %s, it was %s" % (Output, Answer))
         Points = Points + 1
         Winner = Networkingstr
-        print(int(input("This AI has completed %s Tests better than any other alteration, End simulation?(Y:1/N:0)" % Points)))
+        Fin = int(input("This AI has completed %s Tests better than any other alteration, End simulation?(Y:1/N:0)" % Points))
     else:
         points = 0;
     if Soutput == str("A"):
         Winner = ANetworkingstr
-        print("The AI thought the answer was %s, it was %s" % (OutputA, Answer))
+        print("The AI thought the answer was %s, it was %s" % (AOutput, Answer))
     if Soutput == str("B"):
         Winner = BNetworkingstr
-        print("The AI thought the answer was %s, it was %s" % (OutputB, Answer))
+        print("The AI thought the answer was %s, it was %s" % (BOutput, Answer))
     if Soutput == str("C"):
         Winner = CNetworkingstr
-        print("The AI thought the answer was %s, it was %s" % (OutputC, Answer))
+        print("The AI thought the answer was %s, it was %s" % (COutput, Answer))
     if Soutput == str("D"):
         Winner = DNetworkingstr
-        print("The AI thought the answer was %s, it was %s" % (OutputD, Answer))
+        print("The AI thought the answer was %s, it was %s" % (DOutput, Answer))
     if Soutput == str("E"):
         Winner = ENetworkingstr
-        print("The AI thought the answer was %s, it was %s" % (OutputE, Answer))
+        print("The AI thought the answer was %s, it was %s" % (EOutput, Answer))
     Networkingstr = Winner
     ANetworkingstr = CopyArray(Networkingstr)
     BNetworkingstr = CopyArray(Networkingstr)
@@ -199,8 +198,8 @@ while(Fin == 0):
     valA = valA+1
     ENetworkingstr = Evolve(valA,ENetworkingstr)
     valA = valA+1
-    Inp = 0
-    Answer = 0
+    Inp = str("")
+    Answer = []
     roundsc = 0
     roundsd = 0
 print("Map of the Winner:%s" % Networkingstr)
