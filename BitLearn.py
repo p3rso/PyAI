@@ -2,8 +2,8 @@ FileN = open("Nodes.py")
 exec(str(FileN.read()))
 FileR = open("Random.py")
 exec(str(FileR.read()))
-inputamount = 10
-Layers = 40 #recommended to be over 3 for best results
+inputamount = 10 #amount of inputs to the network
+Layers = 40 #Definition, or complexity of network (recommended to be over 2x"inputamount" for best results)
 Networkingstr = []
 ANetworkingstring = []
 BNetworkingstring = []
@@ -147,7 +147,7 @@ valA = valA+1
 valA = 5
 while(Fin == 0):
     roundsa = roundsa+1
-    while(roundsc <= inputamount-1):
+    while(roundsc <= inputamount-1):  #mess with these two while loops if you are looking for program input not user input.
         Inp = Inp + str(input("Question: Input a bit:"))
         roundsc = roundsc + 1
     while(roundsd <= inputamount-1):
@@ -164,7 +164,7 @@ while(Fin == 0):
         print("The AI thought the answer was %s, it was %s" % (Output, Answer))
         Points = Points + 1
         Winner = Networkingstr
-        Fin = int(input("This AI has completed %s Tests better than any other alteration, End simulation?(Y:1/N:0)" % Points))
+        Fin = int(input("This AI has completed %s Tests better than any other alteration, End simulation?(Y:1/N:0)" % Points)) #mess with this to automate this program
     else:
         points = 0;
     if Soutput == str("A"):
