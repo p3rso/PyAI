@@ -1,4 +1,0 @@
-InputAmount =  	#amount of inputs to the network.
-Layers = 		#Definition, or complexity of network (recommended to be over 2x"InputAmount" for best results).
-Depth =  		#can,but shouldn't be over 8x InputAmount.
-#all of these should be numbers, or integers.
