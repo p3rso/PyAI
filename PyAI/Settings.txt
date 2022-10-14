@@ -1,0 +1,8 @@
+InputAmount = 9 	#No Limits
+Layers = 50		#recommended to be over 2x"InputAmount" for best results
+Depth = 5 		#can,but shouldn't be over 8x InputAmount.
+#Inputamount is, simply, the amount of inputs to the network.
+#Layers is the complexity of the network, as i increases, the network gets more complex
+#Depth is the "craziness" of the AI.  Increase it to get wider varying results in the learn stage.
+#NOTE: INPUTAMOUNT & LAYERS UST NT CHANGE BETWEEN LEARNING AND TESTING PHASE, DEPTH ONLY USED IN LEARNING.
+#all of these should be numbers, or integers.
