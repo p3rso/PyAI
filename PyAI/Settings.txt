@@ -1,0 +1,11 @@
+InputAmount = 9 	#No Limits
+Layers = 50		#recommended to be over 2x"InputAmount" for best results
+Depth = 5 		#can,but shouldn't be over 8x InputAmount.
+mode = "BYTE"     # "BYTE" or "BIT"
+
+#Inputamount is, simply, the amount of inputs to the network.
+#Layers is the complexity of the network, as it increases, the network gets more complex
+#Depth is the "craziness" of the AI.  Increase it to get wider varying results in the learn stage.
+#Mode is the input type, either Bytes or Bits.
+#NOTE: INPUTAMOUNT, LAYERS, & MODE MUST NOT CHANGE BETWEEN LEARNING AND TESTING PHASE, DEPTH ONLY USED IN LEARNING.
+#All of these should be numbers, or integers Except for mode, which is a string.
